@@ -5,4 +5,6 @@ An ontology designed to formalize symbolic representations of music by focusing 
 
 The ontology is created in mpo.py using owlready2. The knowledge graph is created in convert_graph.py using rdflib.
 
+For harmonic context analysis, we facilitate the Functional Harmony Ontology: https://github.com/spyroskantarelis/FunctionalHarmony
+
 Kantarelis Spyridon, Edmund Dervakos, and Giorgos Stamou. "The Music Part Ontology." Description Logics. 2023.

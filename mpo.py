@@ -9,9 +9,10 @@ onto = get_ontology("http://purl.org/ontology/mpo/")
 fho = onto.get_namespace('http://purl.org/ontology/fho/')
 
 genres = ['blues','folk','hip_hop','house','indie','jazz','metal','pop',
-         'punk','rap','reggae','rock','soul','pop_rock','alternative','country','electronic']
+         'punk','rap','reggae','rock','soul','pop_rock','alternative','country','electronic', 'medium_swing',
+         'medium_up_swing','up_tempo_swing','ballad','bossa_nova','classical']
 
-parts = ['Intro','Verse','Chorus','Outro','Bridge','Instrumental','Interlude','Solo']
+parts = ['Intro','Verse','Chorus','Outro','Bridge','Instrumental','Interlude','Solo', 'NoParts']
 
 with onto:
 
@@ -50,15 +51,16 @@ with onto:
         pass
     class Solo(Part):
         pass
+    class NoParts(Part):
+        pass
     class ChordProgression(Thing):
         pass
     class TrackChordProgression(ChordProgression):
         pass
     class Chord(Thing):
         namespace = fho
+        equivalent_to = fho.Chord
         pass
-    class Chord(Thing):
-        equivalent_to = [Chord]
 
     class isChordProgressionof(ObjectProperty):
         domain = [ChordProgression]
